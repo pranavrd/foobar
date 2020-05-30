@@ -1,9 +1,11 @@
-n = input("ID ")
-b = int(input("Base "))
-
+n=input("ID ")
+b=int(input("base "))
+flag=0
 k=len(n)
-
-for i in range(0,10):
+l=[]
+upid=0
+count=0
+while True:
 	x=''.join(sorted(n,reverse=True))
 	y=''.join(sorted(n))
 
@@ -28,13 +30,17 @@ for i in range(0,10):
 		z=con+z
 
 	if z[:]==n[:] :
-		print(1)
+		flag=1
 		break
-
-	print(z)
-
+    
 	n=z[:]
-#got the end of first cycle of n
-#add condition to check if z is same length as n
+    
+	if z in l:
+	    upid=l.index(z)
+	    break
+	l.append(z)
 
-
+if flag==1:
+    print(1)
+else:
+    print(len(l)-upid)

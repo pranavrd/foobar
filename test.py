@@ -1,33 +1,19 @@
-def zeroes(z):
-	zero=0
-	zcap=[]
+import random
+for x in range(random.randint(2,2000)):
+  print(random.randint(1,99)," ", end="", flush=True)
 
-	while z>0 :
-		t=int(z%2)
-		zcap.append(t)
-		z=z//2
+# inp = input()
+# l = list(map(int,inp.split()))
+# l.sort()
 
-	z=''.join(str(i) for i in zcap[:])
-	for i in range(len(z)):
-		if z[i]=='0':
-			zero+=1
-		else:
-			break
-	return zero
+# cnt = 0
+# memo = [0] * len(l)
+# print(memo,type(memo)) 
+# for i in range(len(l) - 1):
+#   for j in range(i + 1, len(l)):
+#     if l[j] % l[i] == 0:  
+#       print(memo)  
+#       memo[j] += 1
+#       cnt += memo[i]
 
-i=int(input("Pellet size : "))
-
-j=0
-while i!=1:
-	if i&1==0:
-		i=i>>1
-	elif ((i==3) or (zeroes(i-1)) > zeroes(i+1)):
-		i-=1
-	else:
-		i+=1
-	j+=1
-print(j)
-# if(i&1==1):
-# 	print(dectobin(i-1))
-# 	print(dectobin(i+1))
-
+# print(cnt)
